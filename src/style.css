@@ -1,106 +1,106 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  :root {
-    --font-family: 'Poppins', sans-serif;
-    --font-family-styled: 'Sacramento', cursive;
-    --Box-shadow-outside: -5px -5px 20px rgba(255, 255, 255, 0.849), 5px 5px 9px rgba(94, 104, 121, 0.3);
-    --Box-shadow-inside: inset -5px -5px 9px rgba(255, 255, 255, 0.647), inset 5px 5px 9px rgba(94, 104, 121, 0.3);
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --font-family-styled: 'Sacramento', cursive;
+  --Box-shadow-outside: -5px -5px 20px rgba(255, 255, 255, 0.849), 5px 5px 9px rgba(94, 104, 121, 0.3);
+  --Box-shadow-inside: inset -5px -5px 9px rgba(255, 255, 255, 0.647), inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .to-do-list-section {
-    background-color: rgb(246, 243, 238);
-    justify-content: center;
-    margin: auto;
-    height: 100vh;
+  background-color: rgb(246, 243, 238);
+  justify-content: center;
+  margin: auto;
+  height: 100vh;
 }
 
 .container {
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    box-shadow: var(--Box-shadow-outside);
-    border-radius: 7px;
-    background-color: #fff;
-    height: auto;
-    width: 50%;
-    margin: auto;
-    position: relative;
-    top: 10%;
-    /* padding: 5px 5px 0 5px; */
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  box-shadow: var(--Box-shadow-outside);
+  border-radius: 7px;
+  background-color: #fff;
+  height: auto;
+  width: 50%;
+  margin: auto;
+  position: relative;
+  top: 10%;
+
+  /* padding: 5px 5px 0 5px; */
 }
 
 .title-div {
-    font-family: var(--font-family-styled);
+  font-family: var(--font-family-styled);
   font-size: 24px;
   color: rgb(163, 158, 158);
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 #icon {
-    color: rgb(163, 158, 158);
-    font-size: 15px;
-    padding: 10px;
+  color: rgb(163, 158, 158);
+  font-size: 15px;
+  padding: 10px;
 }
 
 .li-list {
-    height: 40px;
-    display: flex;
-    align-items: center;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .Checkboxi {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .listdiv {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-
 .add-items {
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .addItem {
-    border: none;
-    outline: none;
-    height: 40px;
-    width: 100%;
-    font-style: italic;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  font-style: italic;
 }
 
 .borderLine {
-    border: 1px solid rgb(251, 248, 248);
+  border: 1px solid rgb(251, 248, 248);
 }
 
 .input-field {
-    width: 100%;
+  width: 100%;
 }
 
 .button-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(251, 248, 248);
-    color: gray;
-    height: 40px;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(251, 248, 248);
+  color: gray;
+  height: 40px;
+  width: 100%;
 }

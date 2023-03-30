@@ -1,19 +1,18 @@
+/* eslint-disable no-unused-vars */
 import _ from 'lodash';
-import printMe from './print.js';
+import AddItems from './print';
+// import printMe from './print.js';
 import './style.css';
 
- function component() {
-   const element = document.createElement('div');
-  const btn = document.createElement('button');
+const TodoContainer = document.querySelector('.list-items');
 
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const TodoList = [{
+  index: 0,
+  description: 'Do Kitchen cleaning',
+},
+{
+  index: 1,
+  description: 'Visit my friend',
+}];
 
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-
-   return element;
- }
-
- document.body.appendChild(component());
+AddItems(TodoList, TodoContainer);

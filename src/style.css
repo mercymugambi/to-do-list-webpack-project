@@ -50,16 +50,23 @@ body {
   align-items: center;
 }
 
-#icon {
+.image {
   color: rgb(163, 158, 158);
   font-size: 15px;
   padding: 10px;
+}
+
+.icon-remove {
+  color: rgb(163, 158, 158);
+  font-size: 20px;
+  padding: 20px;
 }
 
 .li-list {
   height: 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .Checkboxi {
@@ -70,6 +77,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 .add-items {

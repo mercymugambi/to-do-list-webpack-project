@@ -23,7 +23,7 @@ const AddItems = (Items, Element) => {
       const index = parseInt(li.dataset.index, 10); // Specify radix 10 to avoid warnings
       const checkbox = li.querySelector('.Checkboxi');
       if (checkbox.checked) {
-        Items.splice(index - 1, 1); // Remove the corresponding element from the array
+        Items.splice(index - 1, 1); // Removes the corresponding element from the array
         AddItems(Items, Element); // Re-render the list
       }
     });

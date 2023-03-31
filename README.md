@@ -78,7 +78,7 @@ After you're finished please remove all the comments and instructions!
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://html.org/">index.html</a>HTML</li>
+    <li><a href="https://javascript.info/">index.js</a>Javascript</li>
   </ul>
 
   <ul>

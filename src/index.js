@@ -29,7 +29,7 @@ inputField.addEventListener('keydown', (event) => {
       index: TodoList.length,
     };
     TodoList.push(newItem);
-    // Save the updated To Do List in local storage
+    // Saves the updated To Do List in local storage
     localStorage.setItem('items', JSON.stringify(TodoList));
     AddItems(TodoList, TodoContainer);
     inputField.value = '';
@@ -37,7 +37,7 @@ inputField.addEventListener('keydown', (event) => {
 });
 
 const todoContainer = document.querySelector('.list-items');
-
+// Edits the description and updates the local storage
 todoContainer.addEventListener('click', (event) => {
   const { target } = event;
 
@@ -47,15 +47,17 @@ todoContainer.addEventListener('click', (event) => {
     target.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
         target.removeAttribute('contenteditable');
-        const index = parseInt(target.parentElement.dataset.index, 10);
+        const li = target.closest('li');
+        const index = parseInt(li.dataset.index, 10);
+        const task = TodoList[index];
         const newDescription = target.textContent.trim();
 
-        // Update the task description in the array
-        if (Array.isArray(TodoList) && index >= 0 && index < TodoList.length) {
-          TodoList[index].description = newDescription;
-          // Save the updated To Do List in local storage
-          localStorage.setItem('items', JSON.stringify(TodoList));
-        }
+        // Updated the task object in the array with the new description
+        task.description = newDescription;
+
+        localStorage.setItem('items', JSON.stringify(TodoList));
+        // Updated the UI with the new description
+        AddItems(TodoList, TodoContainer);
       }
     });
   }

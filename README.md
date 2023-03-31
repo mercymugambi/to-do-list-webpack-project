@@ -93,13 +93,13 @@ After you're finished please remove all the comments and instructions!
 > The key features are:
 
 - **Visualize the template**
-- **implement linters**
+- **implemt more features for days activity**
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+<!-- ## 🚀 Live Demo <a name="live-demo"></a> -->
 
-- [Live Demo Link](https://mercymugambi.github.io/)
+<!-- - [Live Demo Link](https://mercymugambi.github.io/) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,10 +171,8 @@ github pages
 
 > Below are future features to be added.
 
-- **more_content**
-- **desktop_version**
-- **contact_details**
-- **JavaScript Functionality**
+- **more_days_features**
+- **Add alerts and time schedule**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

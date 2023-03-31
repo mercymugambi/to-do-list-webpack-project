@@ -64,7 +64,7 @@ After you're finished please remove all the comments and instructions!
 
 > "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. This simple web page is built using webpack, es6 and served by a webpack dev server.
 
-**To-do list** is a project where i test my jvascript and webpack programming skills.
+**To-do list** is a project where i test my javascript and webpack programming skills.
 
 ## 🛠 Built With <a name="built-with"></a>
 

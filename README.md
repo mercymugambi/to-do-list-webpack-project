@@ -60,11 +60,11 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Mobile first portfolio<a name="Mobile first portfolio"></a>
+# 📖 To-do list<a name="To-do list"></a>
 
 > "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. This simple web page is built using webpack, es6 and served by a webpack dev server.
 
-**setup mobile first portfolio** is a project where i test my jvascript and webpack programming skills.
+**To-do list** is a project where i test my jvascript and webpack programming skills.
 
 ## 🛠 Built With <a name="built-with"></a>
 

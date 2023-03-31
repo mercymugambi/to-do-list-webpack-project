@@ -2,7 +2,7 @@ const AddItems = (Items, Element) => {
   let finalHtmlItem = '';
   Items.forEach((todo, index) => {
     finalHtmlItem += `
-      <li class = "li-list" data-index="${index}">
+      <li class = "li-list" data-index="${index + 1}">
       <div class="listdiv">
         <input type="checkbox" class="Checkboxi" />
         <p>${todo.description}</p>

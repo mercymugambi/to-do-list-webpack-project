@@ -36,8 +36,6 @@ body {
   margin: auto;
   position: relative;
   top: 10%;
-
-  /* padding: 5px 5px 0 5px; */
 }
 
 .title-div {
@@ -50,16 +48,37 @@ body {
   align-items: center;
 }
 
-#icon {
+.image {
   color: rgb(163, 158, 158);
   font-size: 15px;
   padding: 10px;
+}
+
+.remove-icon {
+  color: rgb(163, 158, 158);
+  font-size: 20px;
+  padding: 20px;
 }
 
 .li-list {
   height: 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.fa-ellipsis-vertical {
+  pointer-events: none;
+}
+
+.dragged-item {
+  opacity: 0.5; /* make the item semi-transparent */
+  background-color: rgb(214, 204, 204);
+}
+
+.delete-item {
+  background-color: rgb(177, 144, 74);
+  color: white;
 }
 
 .Checkboxi {
@@ -70,6 +89,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 .add-items {

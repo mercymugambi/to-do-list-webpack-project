@@ -69,6 +69,11 @@ body {
   justify-content: space-between;
 }
 
+.delete-item {
+  background-color: rgb(177, 144, 74);
+  color: white; /* Optional - this changes the text color to white to increase contrast */
+}
+
 .Checkboxi {
   margin-right: 10px;
 }

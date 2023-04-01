@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/extensions
+import { markCompleted, markIncomplete } from './status.js';
+
 // let dragStartIndex;
 const AddItems = (Items, Element) => {
   let finalHtmlItem = '';
@@ -55,7 +58,7 @@ const AddItems = (Items, Element) => {
     checkbox.addEventListener('change', () => {
       const li = checkbox.closest('.li-list');
       const description = li.querySelector('p');
-
+      const index = parseInt(li.dataset.index, 10);
       if (checkbox.checked) {
         // Add strikethrough to description
         description.contentEditable = false;
@@ -63,8 +66,9 @@ const AddItems = (Items, Element) => {
         li.classList.remove('delete-item');
         trashIcon.classList.remove('fa-trash');
         trashIcon.classList.add('fa-ellipsis-vertical');
-        // Set background color to normal
-        // li.style.backgroundColor = 'black';
+        // Mark todo as completed in the array
+        markCompleted(Items[index]);
+        checkbox.checked = true;
       } else {
         // Remove strikethrough from description
         description.style.textDecoration = 'none';
@@ -72,7 +76,11 @@ const AddItems = (Items, Element) => {
         li.classList.remove('delete-item');
         trashIcon.classList.remove('fa-trash');
         trashIcon.classList.add('fa-ellipsis-vertical');
+        markIncomplete(Items[index]);
+        checkbox.checked = false;
       }
+      // Save the updated To Do List in local storage
+      localStorage.setItem('items', JSON.stringify(Items));
     });
     // Add event listener to trash icon
     trashIcon.addEventListener('click', (event) => {

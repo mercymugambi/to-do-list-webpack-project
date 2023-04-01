@@ -1,4 +1,5 @@
 // eslint-disable-next-line import/extensions
+// eslint-disable-next-line import/extensions
 import { markCompleted, markIncomplete } from './status.js';
 
 // let dragStartIndex;
@@ -59,7 +60,11 @@ const AddItems = (Items, Element) => {
       const li = checkbox.closest('.li-list');
       const description = li.querySelector('p');
       const index = parseInt(li.dataset.index, 10);
+      const myButton = document.getElementById('btn');
       if (checkbox.checked) {
+        myButton.disabled = !checkbox.checked;
+        myButton.style.color = 'red';
+        myButton.style.cursor = 'pointer';
         // Add strikethrough to description
         description.contentEditable = false;
         description.style.textDecoration = 'line-through';
@@ -70,6 +75,8 @@ const AddItems = (Items, Element) => {
         markCompleted(Items[index]);
         checkbox.checked = true;
       } else {
+        myButton.disabled = checkbox.checked;
+        myButton.style.color = 'gray';
         // Remove strikethrough from description
         description.style.textDecoration = 'none';
         description.contentEditable = false;
@@ -89,7 +96,7 @@ const AddItems = (Items, Element) => {
       // Remove the list item from the DOM
       li.remove();
       // Removes the corresponding element from the array
-      Items.splice(index, 1);
+      Items.splice(index - 1, 1);
       // Updated the index of the remaining tasks in the array
       Items.forEach((task, i) => {
         task.index = i;
@@ -98,6 +105,26 @@ const AddItems = (Items, Element) => {
       localStorage.setItem('items', JSON.stringify(Items));
     });
   });
-};
 
+  const myButton = document.getElementById('btn');
+  // Add event listener to the button
+  // Add event listener to button
+  myButton.addEventListener('click', () => {
+  // Get all the list items
+    const listItems = document.querySelectorAll('.li-list');
+    // Filter the list items that have checkbox checked
+    const completedItems = Array.from(listItems).filter((li) => li.querySelector('.Checkboxi').checked);
+    // Remove the completed items from the DOM
+    completedItems.forEach((li) => li.remove());
+    // Remove the completed items from the array
+    Items = Items.filter((todo) => !todo.completed);
+    // Updated the index of the remaining tasks in the array
+    Items.forEach((task, i) => {
+      task.index = i;
+    });
+    localStorage.setItem('items', JSON.stringify(Items));
+    // Reload the page
+    window.location.reload();
+  });
+};
 export default AddItems;

@@ -36,8 +36,6 @@ body {
   margin: auto;
   position: relative;
   top: 10%;
-
-  /* padding: 5px 5px 0 5px; */
 }
 
 .title-div {
@@ -69,9 +67,18 @@ body {
   justify-content: space-between;
 }
 
+.fa-ellipsis-vertical {
+  pointer-events: none;
+}
+
+.dragged-item {
+  opacity: 0.5; /* make the item semi-transparent */
+  background-color: rgb(214, 204, 204);
+}
+
 .delete-item {
   background-color: rgb(177, 144, 74);
-  color: white; /* Optional - this changes the text color to white to increase contrast */
+  color: white;
 }
 
 .Checkboxi {

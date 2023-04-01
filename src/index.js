@@ -37,6 +37,7 @@ inputField.addEventListener('keydown', (event) => {
 });
 
 const todoContainer = document.querySelector('.list-items');
+
 // Edits the description and updates the local storage
 todoContainer.addEventListener('click', (event) => {
   const { target } = event;
@@ -61,4 +62,35 @@ todoContainer.addEventListener('click', (event) => {
       }
     });
   }
+});
+
+// drag and drop
+todoContainer.addEventListener('dragstart', (event) => {
+  // Add a class to the dragged item
+  event.target.classList.add('dragged-item');
+  event.dataTransfer.setData('text/plain', event.target.dataset.index);
+});
+
+todoContainer.addEventListener('dragover', (event) => {
+  event.preventDefault();
+});
+
+todoContainer.addEventListener('drop', (event) => {
+  // Remove the class from the dragged item
+  event.target.classList.remove('dragged-item');
+  const fromIndex = event.dataTransfer.getData('text/plain');
+  const toIndex = event.target.closest('li').dataset.index;
+
+  // Move the item in the array
+  const item = TodoList.splice(fromIndex, 1)[0];
+  TodoList.splice(toIndex, 0, item);
+
+  // Assign new indexes based on their new positions
+  for (let i = 0; i < TodoList.length; i += 1) {
+    TodoList[i].index = i;
+  }
+
+  // Save the updated list to local storage and update the UI
+  localStorage.setItem('items', JSON.stringify(TodoList));
+  AddItems(TodoList, TodoContainer);
 });

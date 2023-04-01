@@ -1,18 +1,18 @@
+// let dragStartIndex;
 const AddItems = (Items, Element) => {
   let finalHtmlItem = '';
   Items.forEach((todo, index) => {
     finalHtmlItem += `
-      <li class="li-list" data-index="${index}">
-        <div class="listdiv">
+      <li class="li-list" data-index="${index}" draggable="true">
+        <div class="listdiv draggable">
           <input type="checkbox" class="Checkboxi" />
           <p>${todo.description}</p>
         </div>
-        <i class="fa-solid fa-ellipsis-vertical remove-icon"></i>
+        <i class="fa-solid fa-ellipsis-vertical remove-icon" draggable="true" ></i>
       </li>
       <div class="borderLine"></div>
     `;
   });
-
   Element.innerHTML = finalHtmlItem;
 
   // Add event listener to each list item
@@ -21,10 +21,11 @@ const AddItems = (Items, Element) => {
     const checkbox = li.querySelector('.Checkboxi');
     const trashIcon = li.querySelector('.remove-icon');
     const description = li.querySelector('p');
-    // const repositionIcon = li.querySelector('.reposition-icon');
+
+    // check.addEventListener('click', checkOrder);
 
     li.addEventListener('click', () => {
-    // Display trash icon and change background color
+      // Display trash icon and change background color
       li.classList.add('delete-item');
       trashIcon.classList.remove('fa-ellipsis-vertical');
       trashIcon.classList.add('fa-trash');
@@ -71,15 +72,12 @@ const AddItems = (Items, Element) => {
         li.classList.remove('delete-item');
         trashIcon.classList.remove('fa-trash');
         trashIcon.classList.add('fa-ellipsis-vertical');
-        // Set background color to alternate color
-        // li.style.backgroundColor = 'lightgrey';
       }
     });
     // Add event listener to trash icon
     trashIcon.addEventListener('click', (event) => {
       event.stopPropagation(); // Prevent the li click event from firing
       const index = parseInt(li.dataset.index, 10);
-      // checkbox.checked = true;
       // Remove the list item from the DOM
       li.remove();
       // Removes the corresponding element from the array

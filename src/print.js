@@ -2,7 +2,6 @@
 // eslint-disable-next-line import/extensions
 import { markCompleted, markIncomplete } from './status.js';
 
-// let dragStartIndex;
 const AddItems = (Items, Element) => {
   let finalHtmlItem = '';
   Items.forEach((todo, index) => {

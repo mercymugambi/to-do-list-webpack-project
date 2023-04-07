@@ -4,6 +4,8 @@ import AddItems from './print';
 // import printMe from './print.js';
 import './style.css';
 
+const { removeItem } = require('./removeList');
+
 const TodoContainer = document.querySelector('.list-items');
 // Check if To Do List exists in local storage
 const storedItems = localStorage.getItem('items');
@@ -18,6 +20,7 @@ if (storedItems) {
 
 // Render To Do List
 AddItems(TodoList, TodoContainer);
+removeItem(TodoList);
 
 // Event listener to add tasks to the to do list when enter is pressed.
 const inputField = document.querySelector('.addItem');
@@ -32,6 +35,7 @@ inputField.addEventListener('keydown', (event) => {
     // Saves the updated To Do List in local storage
     localStorage.setItem('items', JSON.stringify(TodoList));
     AddItems(TodoList, TodoContainer);
+    removeItem(TodoList);
     inputField.value = '';
   }
 });
@@ -59,6 +63,7 @@ todoContainer.addEventListener('click', (event) => {
         localStorage.setItem('items', JSON.stringify(TodoList));
         // Updated the UI with the new description
         AddItems(TodoList, TodoContainer);
+        removeItem(TodoList);
       }
     });
   }
@@ -93,4 +98,5 @@ todoContainer.addEventListener('drop', (event) => {
   // Save the updated list to local storage and update the UI
   localStorage.setItem('items', JSON.stringify(TodoList));
   AddItems(TodoList, TodoContainer);
+  removeItem(TodoList);
 });

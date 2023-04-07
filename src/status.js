@@ -1,7 +1,9 @@
-export function markCompleted(task) {
+function markCompleted(task) {
   task.completed = true;
 }
 
-export function markIncomplete(task) {
+function markIncomplete(task) {
   task.completed = false;
 }
+
+module.exports = { markCompleted, markIncomplete };

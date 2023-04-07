@@ -2,7 +2,7 @@ jest.mock('../index.js');
 const { deleteTask, addTask } = require('../index');
 const { removeItem } = require('../removeList');
 
-describe('Unit test on remove function', () => {
+describe('test on remove function', () => {
   test('adding a new task', () => {
     expect(addTask({ index: 1, description: 'hello world', completed: false })).toStrictEqual([{ index: 1, description: 'hello world', completed: false }]);
   });

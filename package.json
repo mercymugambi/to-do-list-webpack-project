@@ -112,7 +112,7 @@
     "start": "webpack serve --open",
     "server": "node server.js",
     "build": "webpack",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",

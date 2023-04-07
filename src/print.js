@@ -17,26 +17,27 @@ const AddItems = (Items, Element) => {
     `;
   });
   Element.innerHTML = finalHtmlItem;
+
+  const myButton = document.getElementById('btn');
+  // Add event listener to the button
+  // Add event listener to button
+  myButton.addEventListener('click', () => {
+    // Get all the list items
+    const listItems = document.querySelectorAll('.li-list');
+    // Filter the list items that have checkbox checked
+    const completedItems = Array.from(listItems).filter((li) => li.querySelector('.Checkboxi').checked);
+    // Remove the completed items from the DOM
+    completedItems.forEach((li) => li.remove());
+    // Remove the completed items from the array
+    Items = Items.filter((todo) => !todo.completed);
+    // Updated the index of the remaining tasks in the array
+    Items.forEach((task, i) => {
+      task.index = i;
+    });
+    localStorage.setItem('items', JSON.stringify(Items));
+    // Reload the page
+    window.location.reload();
+  });
 };
 
-const myButton = document.getElementById('btn');
-// Add event listener to the button
-// Add event listener to button
-myButton.addEventListener('click', () => {
-  // Get all the list items
-  const listItems = document.querySelectorAll('.li-list');
-  // Filter the list items that have checkbox checked
-  const completedItems = Array.from(listItems).filter((li) => li.querySelector('.Checkboxi').checked);
-  // Remove the completed items from the DOM
-  completedItems.forEach((li) => li.remove());
-  // Remove the completed items from the array
-  Items = Items.filter((todo) => !todo.completed);
-  // Updated the index of the remaining tasks in the array
-  Items.forEach((task, i) => {
-    task.index = i;
-  });
-  localStorage.setItem('items', JSON.stringify(Items));
-  // Reload the page
-  window.location.reload();
-});
 export default AddItems;

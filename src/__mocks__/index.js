@@ -14,4 +14,9 @@ const deleteTask = (a) => {
   return newTask;
 };
 
-module.exports = { addTask, deleteTask };
+const clearCompletedTasks = (tasks) => {
+  const incompleteTasks = tasks.filter((task) => !task.completed);
+  return incompleteTasks;
+};
+
+module.exports = { addTask, deleteTask, clearCompletedTasks };

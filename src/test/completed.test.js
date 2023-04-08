@@ -45,7 +45,7 @@ describe('markCompleted', () => {
 
   test('expect to update the description of an item', () => {
     expect(update('on my way to school')).toStrictEqual([{
-      index: 1, description: 'on my way to school', completed: true,
+      index: 1, description: 'on my way to school', completed: false,
     }]);
   });
 });

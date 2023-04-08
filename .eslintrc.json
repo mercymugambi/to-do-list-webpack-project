@@ -1,22 +1,32 @@
 {
-    "env": {
-      "browser": true,
-      "es6": true,
-      "jest": true
-    },
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module"
-    },
-    "extends": ["airbnb-base"],
-    "rules": {
-      "no-shadow": "off",
-      "no-param-reassign": "off",
-      "eol-last": "off"
-    },
-    "ignorePatterns": [
-      "dist/",
-      "build/"
-    ]
-  }
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": ["airbnb-base"],
+  "rules": {
+    "no-shadow": "off",
+    "no-param-reassign": "off",
+    "eol-last": "off",
+    "import/extensions": [ 1, {
+      "js": "always", "json": "always"
+    }],
+    "max-classes-per-file": ["error", 2],
+    "import/no-unresolved": "off",
+    "class-methods-use-this": "off"
+  },
+  "ignorePatterns": [
+    "coverage/",
+    "tests/",
+    "public/",
+    "postcss.config.js",
+    "webpack.config.js",
+    "tailwind.config.js"
+  ]
+}

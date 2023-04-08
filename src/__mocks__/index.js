@@ -1,4 +1,4 @@
-const tasks = [];
+let tasks = [];
 
 const addTask = (todo) => {
   tasks.push(todo);
@@ -19,4 +19,12 @@ const clearCompletedTasks = (tasks) => {
   return incompleteTasks;
 };
 
-module.exports = { addTask, deleteTask, clearCompletedTasks };
+const update = (Item) => {
+  tasks = [{ index: 1, description: 'hello world', completed: false }];
+  tasks[0].description = Item;
+  return tasks;
+};
+
+module.exports = {
+  addTask, deleteTask, update, clearCompletedTasks,
+};

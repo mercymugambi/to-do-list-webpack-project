@@ -93,9 +93,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a> -->
+## 🚀 Live Demo <a name="live-demo"></a>
 
-<!-- - [Live Demo Link](https://mercymugambi.github.io/) -->
+- [Live Demo Link](https://to-do-list-p2a8.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

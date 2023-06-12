@@ -3,38 +3,32 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    index: './src/index.js',
-    print: './src/print.js',
-    status: './src/status.js',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
   },
-  devtool: 'inline-source-map',
-  devServer: {
-    static: './dist',
-  },
-  // optimization: {
-  //   runtimeChunk: 'single',
-  // },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: path.resolve(__dirname, 'public', 'index.html'),
+      inject: false,
     }),
   ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-    publicPath: '/',
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'public'),
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        include: path.resolve(__dirname, 'src'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },
